@@ -9,7 +9,6 @@ import { CommitHistoryTile } from '@/components/commit-history-tile';
 import { TopicsTile } from '@/components/topics-tile';
 import { IssuesPrsTile } from '@/components/issues-prs-tile';
 import { DirectoryMapTile } from '@/components/directory-map-tile';
-import { CommitHeatmapTile } from '@/components/heat-map-tile';
 import { StarsForksTile } from '@/components/stars-forks-tile';
 import { MadeWithTiles } from '@/components/made-with-tiles';
 import { useRepoCache } from '@/lib/repoCache';
