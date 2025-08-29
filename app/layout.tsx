@@ -36,11 +36,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@yourhandle',      // <-- change
-    creator: '@yourhandle',   // <-- change
-    title: 'Live, shareable dashboards for everything you build',
-    description: 'Turn any GitHub repo into a beautiful showcase in seconds.',
+    title: 'Tiles — Live, shareable dashboards for everything you build',
+    description: 'Turn any GitHub repo into a beautiful, shareable project showcase in seconds. No OAuth needed for public repos.',
     images: ['/og/tiles-card.png'],
+    site: '@akshatnerella',
   },
   viewport: 'width=device-width, initial-scale=1',
   themeColor: '#7c3aed',
