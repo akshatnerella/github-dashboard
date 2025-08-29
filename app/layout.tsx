@@ -8,32 +8,39 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") || "https://yourdomain.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+
   title: 'Tiles — Live, shareable dashboards for everything you build',
-  description: 'Turn any GitHub repo into a beautiful, public project dashboard in minutes.',
+  description: 'Turn any GitHub repo into a beautiful, shareable project showcase in seconds. No OAuth needed for public repos.',
   keywords: ['github', 'dashboard', 'project showcase', 'repository', 'analytics'],
   authors: [{ name: 'Tiles' }],
   creator: 'Tiles',
   openGraph: {
-    title: 'Tiles — Live, shareable dashboards for everything you build',
-    description: 'Turn any GitHub repo into a beautiful, public project dashboard in minutes.',
-    url: 'https://tiles.dev',
-    siteName: 'Tiles',
     type: 'website',
+    url: '/',
+    siteName: 'Tiles',
+    title: 'Live, shareable dashboards for everything you build',
+    description: 'Turn any GitHub repo into a beautiful showcase in seconds.',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og/tiles-card.png',
         width: 1200,
-        height: 630,
-        alt: 'Tiles - Project Dashboards',
+        height: 628,
+        alt: 'Tiles — Live dashboards poster',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tiles — Live, shareable dashboards for everything you build',
-    description: 'Turn any GitHub repo into a beautiful, public project dashboard in minutes.',
-    images: ['/og-image.png'],
+    site: '@yourhandle',      // <-- change
+    creator: '@yourhandle',   // <-- change
+    title: 'Live, shareable dashboards for everything you build',
+    description: 'Turn any GitHub repo into a beautiful showcase in seconds.',
+    images: ['/og/tiles-card.png'],
   },
   viewport: 'width=device-width, initial-scale=1',
   themeColor: '#7c3aed',
