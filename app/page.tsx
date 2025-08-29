@@ -1,27 +1,32 @@
 import { BackgroundCanvas } from '@/components/background-canvas';
 import { Header } from '@/components/header';
 import { Hero } from '@/components/hero';
-import { AnimatedTilesPeek } from '@/components/animated-tiles-peek';
-import { Integrations } from '@/components/integrations';
-import { Benefits } from '@/components/benefits';
-import { HowItWorks } from '@/components/how-it-works';
 import { Footer } from '@/components/footer';
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
-      <BackgroundCanvas />
-      
-      <div className="relative z-10">
-        <Header />
-        <main>
+    <div className="relative h-dvh overflow-hidden"> {/* lock to viewport, no scroll */}
+      {/* Background Canvas */}
+      <div className="pointer-events-none fixed inset-0 -z-10">
+        <BackgroundCanvas />
+      </div>
+
+      {/* Single container with overlays */}
+      <div className="relative h-full flex flex-col">
+        {/* Header overlay */}
+        <div className="absolute top-0 left-0 right-0 z-10">
+          <Header />
+        </div>
+
+        {/* Main content centered */}
+        <div className="flex-grow flex items-center justify-center">
           <Hero />
-          <AnimatedTilesPeek />
-          <Integrations />
-          <Benefits />
-          <HowItWorks />
-        </main>
-        <Footer />
+        </div>
+
+        {/* Footer overlay */}
+        <div className="absolute bottom-0 left-0 right-0 z-10">
+          <Footer />
+        </div>
       </div>
     </div>
   );

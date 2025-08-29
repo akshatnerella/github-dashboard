@@ -7,6 +7,12 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'bg-dot-grid', // Ensure this class is not purged
+    'absolute',
+    'inset-0',
+    'pointer-events-none',
+  ],
   theme: {
     extend: {
       backgroundImage: {
@@ -83,8 +89,17 @@ const config: Config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      gridTemplateColumns: {
+        16: 'repeat(16, 1fr)', // Ensure 16 columns are defined correctly
+      },
+      gridTemplateRows: {
+        9: 'repeat(9, 1fr)', // Ensure 9 rows are defined correctly
+      },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('@tailwindcss/aspect-ratio'), // Added aspect-ratio plugin
+  ],
 };
 export default config;
